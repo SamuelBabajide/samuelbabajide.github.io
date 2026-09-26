@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400");
+
+/*
+	Custom additions — Projects section
+	The Projects hub, skill pages, and project detail pages all reuse
+	the homepage's real #header/#footer structure (icon, connecting
+	line, bordered content box, bordered nav row) so every page in
+	this flow shares one consistent full-page design — no modal cards.
+*/
+
+/* Dark tint over background images, so text stays legible on
+   busier/lighter photos. Applies to the homepage, Projects hub, and
+   all five skill pages. */
+#bg:before {
+	background-image: linear-gradient(to top, rgba(10, 12, 15, 0.25), rgba(10, 12, 15, 0.25)), url("../../images/overlay.png");
+}
+
+/* Project detail (modal card) pages keep a much lighter tint — the
+   dark card itself provides contrast for the text, so the background
+   image can stay closer to its natural brightness. */
+body.project-detail #bg:before {
+	background-image: linear-gradient(to top, rgba(10, 12, 15, 0.15), rgba(10, 12, 15, 0.15)), url("../../images/overlay.png");
+}
+
+/* Dark outline around header text. Thick outline for the large
+   heading, lighter outline plus glow for the small text so the
+   letters stay crisp. */
+
+/* Large heading: thick outline. The 1px blur smooths the stepped edges. */
+#header h1,
+#header h2 {
+	text-shadow:
+		 3px  0    1px rgba(0, 0, 0, 0.9),
+		-3px  0    1px rgba(0, 0, 0, 0.9),
+		 0    3px  1px rgba(0, 0, 0, 0.9),
+		 0   -3px  1px rgba(0, 0, 0, 0.9),
+		 2px  2px  1px rgba(0, 0, 0, 0.9),
+		-2px  2px  1px rgba(0, 0, 0, 0.9),
+		 2px -2px  1px rgba(0, 0, 0, 0.9),
+		-2px -2px  1px rgba(0, 0, 0, 0.9),
+		0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Small text (tagline, nav buttons): thin outline plus a soft glow,
+   so it stays readable without ghosting. */
+/* Small text (tagline, nav buttons): regular weight for whiter letters,
+   thicker outline plus a soft glow. */
+#header p,
+#header nav ul li a {
+	color: #ffffff;
+	font-weight: 400;
+	text-shadow:
+		 1.5px  0     0 rgba(0, 0, 0, 0.9),
+		-1.5px  0     0 rgba(0, 0, 0, 0.9),
+		 0      1.5px 0 rgba(0, 0, 0, 0.9),
+		 0     -1.5px 0 rgba(0, 0, 0, 0.9),
+		 1px    1px   0 rgba(0, 0, 0, 0.9),
+		-1px    1px   0 rgba(0, 0, 0, 0.9),
+		 1px   -1px   0 rgba(0, 0, 0, 0.9),
+		-1px   -1px   0 rgba(0, 0, 0, 0.9),
+		0 0 6px rgba(0, 0, 0, 0.9),
+		0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Footer credit keeps its own soft glow + frosted pill, unchanged. */
+#footer .copyright {
+	display: inline-block;
+	font-weight: 700;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 18px rgba(0, 0, 0, 0.6);
+	background-color: rgba(8, 10, 13, 0.65);
+	-webkit-backdrop-filter: blur(9px);
+	backdrop-filter: blur(9px);
+	border-radius: 999px;
+	padding: 0.5rem 1.25rem;
+}
+
+/* Extra content block on project detail pages: keeps long paragraphs
+   readable and left-aligned, while headings stay centered like the
+   rest of the header. */
+#header .content.narrow {
+	max-width: 40rem;
+	margin: 0 auto;
+	text-align: left;
+}
+
+	#header .content.narrow .inner h1,
+	#header .content.narrow .inner h2 {
+		text-align: center;
+	}
+
+	#header .content.narrow .image.main {
+		width: 100%;
+	}
+
+/* Small centered logo images on the skill pages */
+#header .image.logo {
+	display: block;
+	width: 160px;
+	margin: 2.5rem auto;
+}
+
+	#header .image.logo img {
+		width: 100%;
+		display: block;
+	}
+
+/* Per-page hero backgrounds — override the default #bg image while
+   keeping the same dark overlay tint (defined in main.css) so text
+   stays readable regardless of the photo used. */
+body.page-home #bg:after {
+	background-image: url("../../images/hero-homepage.jpg");
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+}
+
+body.page-projects #bg:after {
+	background-image: url("../../images/hero-projects.jpg");
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+}
+
+body.page-excel #bg:after {
+	background-image: url("../../images/bg-excel.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+}
+
+body.page-powerbi #bg:after {
+	background-image: url("../../images/bg-powerbi.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+}
+
+body.page-tableau #bg:after {
+	background-image: url("../../images/bg-tableau.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+}
+
+body.page-sql #bg:after {
+	background-image: url("../../images/bg-sql.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+}
+
+body.page-python #bg:after {
+	background-image: url("../../images/bg-python.jpg");
+	background-size: 554px 554px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #131519;
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+}
+
+@media screen and (max-width: 600px) {
+	body.page-python #bg:after { background-size: 88vw 88vw; }
+}
+
+/* Project detail cards: widen the panel so longer project
+   titles fit on one line without overflowing. */
+body.project-detail #main article {
+	width: 47rem;
+}
+
+/* Larger dark halo behind header content (overrides main.css lines 1257-1260) */
+#header {
+	background-image: radial-gradient(rgba(0, 0, 0, 0.20) 15%, rgba(0, 0, 0, 0) 75%);
+}

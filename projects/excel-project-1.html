@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>UK Road Traffic Accident Analysis | Samuel Babajide</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload page-excel project-detail">
+
+		<div id="wrapper">
+
+			<div id="main">
+				<article class="active">
+					<a href="../excel.html" class="close" title="Back to Excel"></a>
+					<h2 class="major">UK Road Traffic Accident Analysis</h2>
+					<span class="image main"><img src="../images/uk-road-traffic-banner.jpg" alt="UK Road Traffic Accidents" /></span>
+					<p>Excel &mdash; an interactive dashboard and prescriptive analysis of 307,973 UK road traffic accident records, built to identify where road safety interventions should be targeted and why.</p>
+
+					<h3>Tools &amp; Skills</h3>
+					<ul>
+						<li>PivotTables &amp; cross-filtering slicers</li>
+						<li>Dynamic KPI cards (linked text boxes, camera tool)</li>
+						<li>Descriptive statistics &amp; data quality auditing</li>
+						<li>Dashboard design &amp; colour system standardisation</li>
+					</ul>
+
+					<h3>Approach</h3>
+					<p>A 307,973-row dataset covering 23 variables and 422 local authorities was audited for coverage, standardised for type and category consistency, then summarised through PivotTables into nine cross-filtering visuals. Four slicers &mdash; Year, Urban/Rural, Severity and City &mdash; update every chart and KPI simultaneously.</p>
+					<p>Casualty totals were reconciled against the severity breakdown rather than assumed, and a standardised colour system was applied so that severity always reads as warm tones and volume measures as cool tones.</p>
+
+					<h3>Key Findings</h3>
+					<ul>
+						<li><strong>Severity multiplies harm.</strong> Fatal accidents produce 1.80 casualties each against 1.34 for slight &mdash; a 34% higher human cost per event.</li>
+						<li><strong>Rural roads carry disproportionate fatal risk.</strong> Rural areas account for 35.5% of accident volume but 59.4% of all fatal accidents, a 2.7&times; fatal rate against urban.</li>
+						<li><strong>Unlit roads are a fixable, rural problem.</strong> 95% of the 16,528 national no-lighting accidents occur in rural areas.</li>
+						<li><strong>Exposure is not risk.</strong> 73.8% of accidents occur in daylight simply because that is when most driving happens &mdash; reading this as a danger signal would misdirect spend.</li>
+					</ul>
+
+					<h3>Data Quality Finding</h3>
+					<p>The coverage audit revealed 68 districts recording accidents in 2021 and exactly zero in 2022, almost all Scottish. Glasgow falls from 1,509 to 0; Edinburgh from 1,193 to 0. This is a reporting gap rather than a road safety achievement, and identifying it prevented a data artifact from being presented as evidence of successful policy. All accident-reduction rankings were excluded from the analysis pending source validation.</p>
+
+					<h3>Outcome</h3>
+					<p>Eight prescriptive recommendations tied to specific figures in the data, including a rural lighting capital programme, a Friday evening enforcement window covering the 17:00 peak, and a proposal to split the national KPI so that accident reduction and casualty reduction are measured as separate goals.</p>
+
+					<ul class="actions">
+						<li><a href="https://github.com/SamuelBabajide/uk-road-traffic-accident-analysis" class="button primary" target="_blank" rel="noopener">View on GitHub</a></li>
+						<li><a href="../excel.html" class="button">&larr; Back to Excel</a></li>
+						<li><a href="../index.html" class="button">Portfolio Home</a></li>
+					</ul>
+				</article>
+			</div>
+
+			<footer id="footer">
+				<p class="copyright">&copy; Samuel Babajide. <a href="https://www.linkedin.com/in/samuelbbabajide" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/SamuelBabajide" target="_blank" rel="noopener">GitHub</a></p>
+			</footer>
+
+		</div>
+
+		<div id="bg"></div>
+
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script>
+			(function($){
+				$(window).on('load', function(){
+					setTimeout(function(){ $('body').removeClass('is-preload'); }, 150);
+				});
+			})(jQuery);
+		</script>
+
+	</body>
+</html>

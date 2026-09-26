@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Project Vogue: Engagement Analysis | Samuel Babajide</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload page-powerbi project-detail">
+
+		<div id="wrapper">
+
+			<div id="main">
+				<article class="active">
+					<a href="../powerbi.html" class="close" title="Back to Power BI"></a>
+					<h2 class="major">Project Vogue: Engagement Analysis</h2>
+					<span class="image main"><img src="../images/project-vogue-banner.jpg" alt="Project Vogue" /></span>
+					<p>Power BI &mdash; an interactive report analysing participation, retention and satisfaction across 16 Yoruba cultural heritage sessions delivered by MYEC between October 2024 and April 2025.</p>
+
+					<h3>Tools &amp; Skills</h3>
+					<ul>
+						<li>Power BI data modelling &amp; DAX measures</li>
+						<li>Cross-filtering &amp; drill-through navigation</li>
+						<li>Data cleaning, deduplication &amp; quality auditing</li>
+						<li>Categorising free-text survey responses</li>
+					</ul>
+
+					<h3>Approach</h3>
+					<p>517 exit-survey responses across three programme events were cleaned in Excel, then modelled in Power BI. Participant names were reconciled to a single canonical form, gender and programme values standardised, dates verified against the delivery calendar, and free-text responses grouped into consistent themes so they could be counted rather than merely read.</p>
+					<p>The report runs to four pages: a Summary carrying programme-wide KPIs, plus a drill-through page for each event with its own participation, gender, feedback and referral views.</p>
+
+					<h3>Data Quality Findings</h3>
+					<p>Two issues surfaced during preparation, both of which would have produced plausible-looking but wrong results. Participants wrote their names differently at each session, so 169 distinct name strings resolved to just 66 real people; taken at face value the register would have reported 2.6 times more unique participants than the programme actually reached. Separately, eight of fifteen sessions carried a 2024 year stamp for dates that fell in 2025, which would have placed Rehearsal six months before Storytelling began.</p>
+
+					<h3>Key Findings</h3>
+					<ul>
+						<li><strong>Retention, not reach.</strong> 560 attendances came from just 66 people, roughly 8.5 visits each. Half the cohort attended ten or more sessions across seven months.</li>
+						<li><strong>The clearest gap.</strong> 17 participants attended exactly once and never returned, which is also why the 9.45 referral rating should carry a caveat.</li>
+						<li><strong>Satisfaction is unusually clean.</strong> Across 517 responses on a 0 to 10 scale, the lowest score recorded was 8. There are no detractors in the dataset at all.</li>
+						<li><strong>Material culture leads.</strong> Traditional outfit styles drew 116 mentions, ahead of proverbs at 78. Tangible heritage lands more memorably than oral heritage.</li>
+						<li><strong>Food and friendship drive return.</strong> Catering and making new friends drew 109 mentions each, both ranking above requests for more cultural content.</li>
+					</ul>
+
+					<h3>Report Interactivity</h3>
+					<p>Two mechanisms compound. Cross-filtering means clicking any element filters every other visual on the page instantly. Drill-through moves to a dedicated page per event, which can then be cross-filtered again. Filtering Storytelling to its final two sessions drops "Next workshop" from 56 mentions to zero, since once the last session had passed nobody asked for another one.</p>
+
+					<h3>Outcome</h3>
+					<p>Four recommendations tied to specific figures, including following up the single-visit group, scaling Oral History deliberately from its ten-attendee pilot, protecting the catering budget as programme design rather than a discretionary extra, and reporting reach and cultural contact as two distinct measures so funders are not given the wrong number.</p>
+
+					<ul class="actions">
+						<li><a href="https://github.com/SamuelBabajide/project-vogue-engagement-analysis" class="button primary" target="_blank" rel="noopener">View on GitHub</a></li>
+						<li><a href="../powerbi.html" class="button">&larr; Back to Power BI</a></li>
+						<li><a href="../index.html" class="button">Portfolio Home</a></li>
+					</ul>
+				</article>
+			</div>
+
+			<footer id="footer">
+				<p class="copyright">&copy; Samuel Babajide. <a href="https://www.linkedin.com/in/samuelbbabajide" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/SamuelBabajide" target="_blank" rel="noopener">GitHub</a></p>
+			</footer>
+
+		</div>
+
+		<div id="bg"></div>
+
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script>
+			(function($){
+				$(window).on('load', function(){
+					setTimeout(function(){ $('body').removeClass('is-preload'); }, 100);
+				});
+			})(jQuery);
+		</script>
+
+	</body>
+</html>
