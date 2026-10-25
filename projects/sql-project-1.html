@@ -47,7 +47,7 @@
 						<li>Joins, Subqueries, Window functions, CTEs &amp; shift-share decomposition</li>
 						<li>Data profiling, quarantine rules &amp; executable quality assertions</li>
 						<li>Query performance tuning &amp; index analysis</li>
-						<li>DuckDB browser playground with a PostgreSQL parity test</li>
+						<li>DuckDB WebAssembly playground with an automated PostgreSQL parity test</li>
 					</ul>
 
 					<h3>Approach</h3>
@@ -56,22 +56,22 @@
 
 					<h3>Key Findings</h3>
 					<ul>
-						<li><strong>The lender matters most.</strong> Two lenders in the same census tract typically differ by 30.6 percentage points in how often they say no, a larger gap than any other factor measured.</li>
-						<li><strong>Group gaps survive income.</strong> In 2025, Black applicants were denied 39.6% of the time against 22.4% for White applicants. Among applicants earning over $200k, the rates were 30.2% against 15.7%.</li>
-						<li><strong>Group gaps survive neighbourhood.</strong> In the 62 tracts with enough decided applications from both groups, the Black denial rate is higher in 60.</li>
-						<li><strong>The 2023 tightening was behaviour, not mix.</strong> A shift-share analysis showed 76% of the rise in denials came from products denying more, the opposite of my own prediction.</li>
-						<li><strong>Denial is not the only failure.</strong> Applications closed for incompleteness range from 0.2% to 28.5% between large lenders, a factor of 142.</li>
+						<li><strong>Debt-to-income is a cliff, not a slope.</strong> From 20 to 49 percent the denial rate is flat near 13. At 50 to 60 it is 40.86, and above 60 it is 90.42. Below 20 percent it rises again to 24.49, because that end of the distribution is small second-lien business rather than cautious borrowers.</li>
+						<li><strong>Which lender you ask is worth fifteen times.</strong> On one identical product, denial across the 72 largest lenders runs from 1.14 to 31.57 percent. The lowest denies 1.14 percent on applicants who are more leveraged and earn substantially less than those of a lender denying 17.76 percent.</li>
+						<li><strong>Borrowing against a home you own is a different market.</strong> 407,382 applications deny at only 7.44 percent but withdraw at 47.59 and close incomplete at 19.27. More applications are lost to abandonment than to refusal.</li>
+						<li><strong>A quarter of the register never reaches a credit decision.</strong> A shift-share analysis showed 76% of the rise in denials came from products denying more, the opposite of my own prediction.</li>
+						<li><strong>Collateral is the only denial reason independent of income.</strong> It moves three quarters of a point across the income bands while debt-to-income falls from 23.44 to 2.41, so in the highest income band collateral becomes the largest single reason a lender gives.</li>
 					</ul>
 
 					<h3>Data Quality Finding</h3>
-					<p>Profiling found 80,167 rows carrying a code the regulator documents nowhere, and showed that counting HMDA race codes naively overstates multi-race applicants sixfold (106,971 against a true 18,051). Every published row is accounted for: 1,754,846 modelled plus 573 quarantined equals the 1,755,419 published. As HMDA holds no credit score, the findings are presented as disparities that persist after controls, not as proof of cause.</p>
+					<p>Profiling found 80,167 rows carrying a code the regulator documents nowhere, and showed that counting HMDA race codes naively overstates multi-race applicants sixfold (106,971 against a true 18,051). Every published row is accounted for: 1,754,846 modelled plus 573 quarantined equals the 1,755,419 published. The parity test then caught something subtler: NUMERIC is arbitrary precision in PostgreSQL and three decimal places in DuckDB, so one rounding step ran twice in one engine and four published figures were wrong in the second decimal. All forty-two queries now agree cell for cell. As HMDA holds no credit score, findings are presented as differences in outcomes, never as proof of cause.</p>
 
 					<h3>Outcome</h3>
-					<p>A reproducible, fully documented database where every claim is executable. Twenty-two published queries open in the browser playground already loaded and run against the real 1.75 million rows, so anyone can check a figure in seconds or write their own SQL queries.</p>
+					<p>A reproducible, fully documented database where every claim is executable. All forty-two published queries open in the browser playground already loaded and run against the real 1.75 million rows, so anyone can check a figure in seconds or write their own SQL queries against the model.</p>
 
 					<ul class="actions actions-primary">
 						<li><a href="https://samuelbabajide.github.io/us-home-mortgage-disclosure-act-new-york/playground/" class="button primary" target="_blank" rel="noopener">Open the SQL Playground</a></li>
-						<li><a href="https://samuelbabajide.github.io/us-home-mortgage-disclosure-act-new-york/catalog/" class="button" target="_blank" rel="noopener">Data Dictionary</a></li>
+						<li><a href="https://samuelbabajide.github.io/us-home-mortgage-disclosure-act-new-york/catalog/" class="button primary" target="_blank" rel="noopener">Data Dictionary</a></li>
 					</ul>
 					<ul class="actions">
 						<li><a href="https://github.com/SamuelBabajide/us-home-mortgage-disclosure-act-new-york" class="button" target="_blank" rel="noopener">View on GitHub</a></li>
