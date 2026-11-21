@@ -1,12 +1,20 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Fair & Explainable Credit Scoring | Samuel Babajide</title>
+		<title>MetroMove Public Transport EDA | Samuel Babajide</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Exploratory data analysis of 1,000 public transport trips across Bus, Train, Ferry and Tram, built in Python with pandas and Plotly." />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="../assets/css/custom.css" />
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<style>
+			/* Two rows of buttons that wrap instead of overflowing */
+			body.project-detail ul.actions { flex-wrap: wrap; }
+			body.project-detail ul.actions.actions-primary { margin-bottom: 1rem; }
+			/* Long title wraps on narrow screens instead of spilling out */
+			body.project-detail #main article h2.major { max-width: 100%; }
+		</style>
 	</head>
 	<body class="is-preload page-python project-detail">
 
@@ -15,23 +23,45 @@
 			<div id="main">
 				<article class="active">
 					<a href="../python.html" class="close" title="Back to Python"></a>
-					<h2 class="major">Fair & Explainable Credit Scoring</h2>
-					<span class="image main"><img src="../images/pic03.jpg" alt="" /></span>
-					<p>Python &mdash; my MSc dissertation project: a credit scoring model for underbanked populations.</p>
+					<h2 class="major">MetroMove Public Transport EDA</h2>
+					<span class="image main"><img src="../images/metromove-banner.jpg" alt="MetroMove Transit Solutions, public transport exploratory data analysis" /></span>
+					<p>Python: <em>Optimizing Public Transit Operations</em>, an end-to-end exploratory data analysis of 1,000 public transport trips across Bus, Train, Ferry and Tram for MetroMove Transit Solutions. The project turns a messy, incomplete trip log into an analysis-ready dataset, then uncovers the demand, fare, route and revenue patterns behind recommendations for pricing and capacity planning.</p>
+
 					<h3>Tools &amp; Skills</h3>
 					<ul>
-						<li>scikit-learn</li>
-						<li>SHAP</li>
-						<li>Fairness metrics</li>
-						<li>Model evaluation</li>
+						<li>Python, pandas &amp; NumPy for cleaning and transformation</li>
+						<li>missingno for missing-value profiling</li>
+						<li>Group-median imputation &amp; IQR outlier checks</li>
+						<li>Matplotlib, Seaborn &amp; interactive Plotly visualisations</li>
+						<li>Jupyter Notebook with inline commentary</li>
 					</ul>
+
 					<h3>Approach</h3>
-					<p>Trained and compared classification models, applied fairness-aware techniques to reduce bias across protected groups, and used SHAP to explain individual predictions.</p>
+					<p>The raw dataset of 1,000 trips and 12 columns was profiled for shape, data types and inconsistencies, then cleaned: stray whitespace and inconsistent casing were fixed, collapsing 9 raw mode labels into 4 modes and 7 station values into 6, and dates and times were standardised, including an arrival date for overnight trips. The 300 missing values (10% across three columns) were imputed with group medians, so each estimate reflects similar trips rather than the dataset as a whole.</p>
+					<p>Descriptive statistics and outlier checks confirmed the cleaned data was sound, and univariate, bivariate and multivariate Plotly charts then explored how demand, fares, routes and revenue vary by mode, station and day.</p>
+
+					<h3>Key Findings</h3>
+					<ul>
+						<li><strong>Sunday is the peak.</strong> Sunday records the highest demand of the week with 167 trips, while Thursday is the quietest at 118.</li>
+						<li><strong>Thursday costs the most.</strong> Thursday has the highest average fare for every transport mode, despite having the lowest volume.</li>
+						<li><strong>Central drives revenue.</strong> Central station leads revenue for every mode, generating about £293k of the £1.25m total.</li>
+						<li><strong>Pricing ignores distance.</strong> Fares show no relationship with trip duration (r &asymp; &minus;0.05) and are broadly similar across modes, which points to fixed route pricing.</li>
+						<li><strong>Tram is under-used.</strong> Tram carries only 13.8% of trips against 33.2% for Bus, so it is flagged for a network coverage review.</li>
+					</ul>
+
+					<h3>Data Quality Finding</h3>
+					<p>Every insight depended on fixing the data first. Inconsistent naming would have split the same station or mode into several categories, and dropping incomplete rows would have discarded 10% of the evidence. Group-median imputation kept all 1,000 trips, and a 1.5 &times; IQR boxplot check showed no outliers in passenger count, fare or trip duration, so no values needed capping or removal. The project closes by recommending validation at the point of entry and controlled vocabularies for modes and stations, so these issues do not recur.</p>
+
 					<h3>Outcome</h3>
-					<p>Produced a model that balanced predictive performance with fairness and interpretability, addressing a real gap in credit access.</p>
+					<p>Five recommendations tied to the evidence: explore distance-based pricing, add Bus and Tram capacity on Sundays, run a tram route-coverage analysis, review frequency on the thinnest routes into North Station, and introduce a data governance framework. Weekend capacity and tram coverage are flagged as the most urgent.</p>
+
+					<ul class="actions actions-primary">
+						<li><a href="https://nbviewer.org/github/SamuelBabajide/metro_move_public_transport_eda/blob/main/metro_move_public_transport_script.ipynb" class="button primary" target="_blank" rel="noopener">View Interactive Charts</a></li>
+						<li><a href="https://github.com/SamuelBabajide/metro_move_public_transport_eda" class="button" target="_blank" rel="noopener">View on GitHub</a></li>
+					</ul>
 					<ul class="actions">
 						<li><a href="../python.html" class="button">&larr; Back to Python</a></li>
-						<li><a href="../index.html" class="button primary">Portfolio Home</a></li>
+						<li><a href="../index.html" class="button">Portfolio Home</a></li>
 					</ul>
 				</article>
 			</div>
@@ -51,7 +81,7 @@
 		<script>
 			(function($){
 				$(window).on('load', function(){
-					setTimeout(function(){ $('body').removeClass('is-preload'); }, 100);
+					setTimeout(function(){ $('body').removeClass('is-preload'); }, 150);
 				});
 			})(jQuery);
 		</script>
